@@ -2,3 +2,6 @@ target/
 .idea/
 .mvn/
 debug-application.iml
+.classpath
+.project
+.settings/
