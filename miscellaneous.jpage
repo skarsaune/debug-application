@@ -1,0 +1,33 @@
+
+
+//testing regex
+java.util.regex.Pattern.compile(".+\\$\\$Lambda\\$.+line: -1").matcher("debugtest.LambdaTest$$Lambda$1.674483268.accept(Object) line: -1").matches()
+
+//date arithmetic
+java.time.Instant.now().truncatedTo(java.time.temporal.ChronoUnit.DAYS).minus(java.time.Duration.ofDays(3)).toEpochMilli()
+java.util.TimeZone.getTimeZone("Europe/Oslo")
+
+//figure out duration syntax
+java.time.Duration.ofHours(2).toString();
+
+//bit shifting
+int s = 2;
+s = s << 3;
+
+
+//optional based control flow
+java.util.Optional.ofNullable((Integer)4).flatMap( a -> java.util.Optional.ofNullable(a + 2)).orElseGet(() -> 3 + 2)
+
+// get a UUID
+java.util.UUID.randomUUID().toString()
+
+//XML types
+javax.xml.datatype.DatatypeFactory.newInstance().newXMLGregorianCalendar("2016-04-23T23:00:00.000+02:00").toGregorianCalendar()
+
+//formatting strings
+String.format("%s, %s and %s", 1, new Object(), "three");
+
+java.util.Arrays.toString(new String[]{"en", "to", "tre"})
+
+
+
