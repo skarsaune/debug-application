@@ -25,7 +25,7 @@ java.util.UUID.randomUUID().toString()
 javax.xml.datatype.DatatypeFactory.newInstance().newXMLGregorianCalendar("2016-04-23T23:00:00.000+02:00").toGregorianCalendar()
 
 //formatting strings
-String.format("%s, %s and %s", 1, new Object(), "three");
+String.format("%d, %s and %s", 1, new Object(), "three");
 
 java.util.Arrays.toString(new String[]{"en", "to", "tre"})
 

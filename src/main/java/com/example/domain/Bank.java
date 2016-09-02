@@ -20,7 +20,11 @@ public class Bank {
 	}
 	
 	private MonetaryAmount convert(MonetaryAmount deposit, Currency currency) {
-		return new MonetaryAmount(currency, deposit.getAmount().multiply(rate(deposit.getCurrency(), currency)));
+		if(deposit.getCurrency() == currency) {
+			return deposit;
+		} else {
+			return new MonetaryAmount(currency, deposit.getAmount().multiply(rate(deposit.getCurrency(), currency)));			
+		}
 	}
 
 
