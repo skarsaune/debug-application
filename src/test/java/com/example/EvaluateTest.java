@@ -11,15 +11,15 @@ import com.example.domain.MonetaryAmount;
 
 public class EvaluateTest {
 
-    @Test
+	private Bank bank = new Bank();
+
+	@Test
     public void evaluateStuff() {
     	Double factor = 1.0;
-    	factor = factor * 2.0;
-    	
-    	
-    	Customer creditor=new Customer();
-        Bank bank = new Bank();
-        bank.openAccount(creditor);
+    	Double result = Math.max(factor * 2.0 , factor * -2.0);
+
+        Customer creditor = new Customer();
+		bank.openAccount(creditor);
 		if(creditor.getAccount().getBalance().getAmount().compareTo(BigDecimal.ZERO) >= 0) {
 			System.out.println("phew");
 		} else {
@@ -34,4 +34,5 @@ public class EvaluateTest {
     	
     	
     }
+
 }

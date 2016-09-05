@@ -1,19 +1,20 @@
 package com.example;
 
-import com.example.domain.Simple;
-import com.example.domain.SimpleCache;
+import java.lang.reflect.Field;
+
 import org.junit.Test;
 
-import java.util.Properties;
+import com.example.domain.Simple;
+import com.example.domain.SimpleCache;
 
 public class TestInstancesAndCreation {
 
-    @SuppressWarnings("unused")
 	@Test
-    public void monitorClassAndInstances() {
+    public void monitorClassAndInstances() throws ReflectiveOperationException {
         Simple someObject=SimpleCache.get("one");
-        Properties veryImportantObject=System.getProperties();
-        String ls=veryImportantObject.getProperty("line.separator");
+        someObject.setValue("newValue");
+        System.out.println(someObject.getValue());
+
 
     }
 
