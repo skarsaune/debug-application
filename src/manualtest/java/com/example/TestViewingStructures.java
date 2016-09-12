@@ -1,11 +1,18 @@
 package com.example;
 
 import org.junit.Test;
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 
 /**
  *
@@ -13,10 +20,11 @@ import java.util.TreeMap;
 public class TestViewingStructures {
 
     @Test
-    public void testViewingStructures() {
+    public void testViewingStructures() throws Exception {
         Map<?, ?> map = createMap();
         List<?> list = createList();
-        System.out.println("map: " + map + ", list: " + list);
+        Document document = parsePom();
+        System.out.println("map: " + map + ", list: " + list + " document: " + document);
     }
 
     private List<?> createList() {
@@ -30,5 +38,9 @@ public class TestViewingStructures {
 
     private Map<?,?> createMap() {
         return new TreeMap<>(System.getProperties());
+    }
+    
+    private Document parsePom() throws Exception {
+    	return DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new File("pom.xml"));
     }
 }
